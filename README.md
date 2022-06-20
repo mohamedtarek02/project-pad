@@ -12,7 +12,7 @@ This is a complete website is created for managing teamwork with a dashboard to 
 - All of the data is stored in a database so no worries to lose it.
 
 
-## Website techniques
+## Project techniques
 - HTML, CSS and JS
 - Vue
 - Vuetify
