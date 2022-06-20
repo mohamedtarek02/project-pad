@@ -1,5 +1,7 @@
 # project-manger
 
+git clone 
+
 ## project description 
 This is a complete website is created for managing teamwork with a dashboard to make every one of the team members aware of what tasks should work on. the tasks of member who signed in displaying the top and highlighted. the dashboard could be sorted with project title, person, due date, or status. Every employee has his own task page to control his tasks and change their status from ongoing to completed and the opposite. The employees could communicate with messages and there is an inbox with sent and received messages. the messages could send as urgent or regular, the urgent message would be highlighted with red color and would appear at the top. you can manage your team members by adding, deleting, editing members, or assigning them tasks. 
 
