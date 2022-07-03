@@ -3,7 +3,7 @@
     <h2 class="my-5">Dashboard</h2>
     <v-btn color="primary" class="mt-4 ml-5" outlined router to="add-task">
       <v-icon left class="mr-3" dense> mdi-folder-plus-outline</v-icon>
-      <span class="font-weight-bold">Add Tasks</span>
+      <span class="font-weight-bold">Add Task</span>
     </v-btn>
     <div v-if="isLoading">
       <base-spinner></base-spinner>
