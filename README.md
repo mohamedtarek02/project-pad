@@ -1,6 +1,6 @@
 # project-manger
 
-Live Server project-padd.herokuapp.com
+Live Server: https://project-padd.herokuapp.com
 
 git clone https://github.com/mohamedtarek02/project-pad.git
 
