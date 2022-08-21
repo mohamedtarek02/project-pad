@@ -3,9 +3,12 @@
     <v-app-bar class="primary" dense dark shaped flat app>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="text-uppercase title">
-        <span class="font-weight-light">Project</span>
-        <span class="font-weight-medium">Pad</span>
+      <v-toolbar-title
+        class="text-uppercase title"
+        @click="$router.push('/dashboard')"
+      >
+        <span class="font-weight-light logo">Project</span>
+        <span class="font-weight-medium logo">Pad</span>
       </v-toolbar-title>
 
       <div class="links d-none d-md-flex">
@@ -40,7 +43,13 @@
 
       <v-spacer></v-spacer>
       <div class="icons d-none d-md-flex">
-        <v-btn class="mt-2" text router to="/inbox/received-messages" @click="addBorder">
+        <v-btn
+          class="mt-2"
+          text
+          router
+          to="/inbox/received-messages"
+          @click="addBorder"
+        >
           <v-icon>mdi-email</v-icon>
           <div class="messageContainer" v-if="messagesNumber > 0">
             <v-avatar color="red" size="17" class="avatarMessage">
@@ -230,6 +239,9 @@ export default {
 </script>
 
 <style>
+.logo {
+  cursor: pointer;
+}
 a,
 a:hover {
   text-decoration: none;

@@ -3,9 +3,10 @@
     <v-col sm="1" md="2" lg="3"> </v-col>
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card class="mt-5 pa-5" height="330px" elevation="6">
-        <p class="text-center send-message-par">
-          send message to: <strong> {{ member.name }} </strong>
-        </p>
+        <h4 class="text-center send-message-par">
+          send message to:
+          <strong class="primary--text"> {{ member.name }} </strong>
+        </h4>
         <v-textarea
           filled
           label="Your Message"

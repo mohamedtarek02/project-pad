@@ -13,23 +13,26 @@
         <Data-Sort></Data-Sort>
         <transition-group tag="ul" name="list">
           <li v-for="task in tasks" :key="task.title">
-            <v-card class="">
+            <v-card>
               <v-row no-gutters wrap :class="`py-2 task ${task.status}`">
                 <v-col md="3">
-                  <p
-                    :class="[
-                      ['grey--text', 'text--darken-2', 'ml-2'],
-                      { highlight: highlightUserTasks(task.person) },
-                      { 'primary--text': highlightUserTasks(task.person) },
-                    ]"
-                  >
-                    {{ task.title }}
-                  </p>
+                  <router-link :to="`task-details/${task.id}`">
+                    <p
+                      :class="[
+                        ['grey--text', 'text--darken-2', 'ml-2'],
+                        { highlight: highlightUserTasks(task.person) },
+                        { 'primary--text': highlightUserTasks(task.person) },
+                      ]"
+                    >
+                      {{ task.title }}
+                    </p>
+                  </router-link>
                 </v-col>
                 <v-col md="3">
                   <p
+                    @click="sendMessage(task.person)"
                     :class="[
-                      ['grey--text', 'text--darken-2'],
+                      ['grey--text', 'text--darken-2', 'member'],
                       { highlight: highlightUserTasks(task.person) },
                       { 'primary--text': highlightUserTasks(task.person) },
                     ]"
@@ -96,12 +99,14 @@ export default {
       this.isLoading = true;
       try {
         await this.$store.dispatch("tasks/fetchTask");
+        await this.$store.dispatch("team/fetchMembers");
       } catch (error) {
         this.error = error.name || "technical error";
       }
       this.highlightUserTasks();
       this.isLoading = false;
     },
+
     highlightUserTasks(person) {
       const user = this.$store.getters["team/user"];
       const username = user.name;
@@ -110,6 +115,13 @@ export default {
       } else {
         return false;
       }
+    },
+
+    sendMessage(person) {
+      const team = this.$store.getters["team/team"];
+      const member = team.find((member) => member.name === person);
+      console.log(team, member, person);
+      this.$router.push(`team/${member.id}`);
     },
   },
   computed: {
@@ -127,6 +139,9 @@ export default {
 </script>
 
 <style>
+.member {
+  cursor: pointer;
+}
 .dashboard {
   margin-top: 10px !important;
 }

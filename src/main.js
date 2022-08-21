@@ -9,6 +9,7 @@ import BaseDialog from "./components/UI/BaseDialog.vue";
 
 Vue.config.productionTip = false;
 
+
 Vue.component("base-spinner", BaseSpinner);
 Vue.component("base-dialog", BaseDialog);
 

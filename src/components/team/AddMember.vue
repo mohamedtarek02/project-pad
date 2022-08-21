@@ -19,7 +19,6 @@ export default {
   methods: {
     addMember() {
       this.$router.push("/add-member");
-      ("working");
     },
   },
 };
